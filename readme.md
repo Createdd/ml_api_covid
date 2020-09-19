@@ -12,6 +12,8 @@ Initial
 
 
 - add app to https://www.data.gv.at/
+- check lincense of https://ourworldindata.org/coronavirus-source-data and add to repo
+-
 
 
 # ToAdd
@@ -21,3 +23,6 @@ Register the new environment in ipython
 ```sh
 ipython kernel install --name ml_api_covid --user
 ```
+
+- pip install pycaret
+-
