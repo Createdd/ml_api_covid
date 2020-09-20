@@ -88,6 +88,7 @@ for col in df.columns:
 # Now we need to encode the nominal variables and impute nans of the numerical variables.
 
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
 
 # ## Encode categorical
 
@@ -121,8 +122,75 @@ df.isna().sum().sum() == 0
 
 # Now the dataset has no Nans and is completely encoded.
 
+# ## Split into train and test set
+
+X = df.drop(columns=['new_cases'])
+y = df.new_cases
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=0)
+
+X_train
+
 # # Add ML
 
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import r2_score
+from sklearn.model_selection import RandomizedSearchCV
+from joblib import dump, load
 
+rf = RandomForestRegressor(n_estimators = 100, random_state = 0, max_depth=len(df_orig.columns))
+
+rf.fit(X_train, y_train)
+
+y_pred = rf.predict(X_test)
+
+print(f'{r2_score(y_test, y_pred):.2%}')
+
+# ## Improve hyperparameters
+
+random_grid = {'n_estimators': [int(x) for x in np.linspace(start = 300, stop = 500, num = 50)],
+               'max_features': ['auto', 'sqrt'],
+               'max_depth': [int(x) for x in np.linspace(10, 60, num = 10)],
+               'min_samples_split': [2, 5],
+               'min_samples_leaf': [2,4],
+               'bootstrap': [True, False]}
+
+rf_random = RandomizedSearchCV(
+    estimator = rf, 
+    param_distributions = random_grid, 
+    n_iter = 100, cv = 3, verbose=2, random_state=0)
+
+rf_random.fit(X_train, y_train)
+
+rf_random.best_params_
+
+# ## Re-run 
+
+# +
+# rf = RandomForestRegressor(**rf_random.best_params_, random_state = 1)
+
+# +
+# y_pred = rf.predict(X_test)
+
+# +
+# print(f'{r2_score(y_test, y_pred):.2%}')
+# -
+
+# # Save model
+
+dump(rf, 'rf_model.joblib') 
+
+# # Predict on country
+
+input_val = 'Germany'
+
+encoder.fit_transform(df_orig['location'])
+
+encode_ind = (encoder.classes_).tolist().index(input_val)
+
+df_orig[df_orig.location == input_val]
+
+to_pred = X[X.location == encode_ind].iloc[-1].values.reshape(1,-1)
+
+rf.predict(to_pred)[0] 
 
 
