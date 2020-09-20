@@ -13,6 +13,7 @@ Initial
 
 - add app to https://www.data.gv.at/
 - check lincense of https://ourworldindata.org/coronavirus-source-data and add to repo
+- make joblib model smaller
 -
 
 
