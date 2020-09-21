@@ -35,4 +35,15 @@ jupytext --from ipynb --to py:light --pre-commit
 
 chmod +x .git/hooks/pre-commit
 ```
--
+
+
+
+docker:
+
+```sh
+docker build ml_api_covid:0.1 .
+```
+
+```sh
+docker run --name deployML -p 8080:8080 ml_api_covid:0.1 .
+```

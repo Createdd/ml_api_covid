@@ -8,7 +8,8 @@ body {
 	color: #fff;
 	font-size: 18px;
 	text-align:center;
-	letter-spacing:1.2px;
+    letter-spacing:1.2px;
+    background: linear-gradient(to left top, #260045, #040008) fixed;
 }
 .page {
 	position: absolute;
@@ -43,3 +44,53 @@ input {
 	transition: box-shadow .5s ease;
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+div {
+margin: auto;
+position:relative;
+/* top: 200px;
+width: 40%; */
+}
+
+#form {
+width: 400px;
+padding: 10px;
+font-size: 18px;
+outline:none;
+background: linear-gradient(to left top, #000, #22132e) fixed;
+border-radius: 10px;
+border: 2px solid rgba(255,255,255,0.2);
+color: rgba(255,255,255,0.8);
+transition: all 0.5s;
+}
+
+#form:hover {
+border: 2px solid rgba(255,255,255,0.5);
+}
+#form:focus {
+border: 2px solid rgba(255,255,255,0.5);
+background: linear-gradient(to left top, #000, #4e2d69) fixed;
+}
+
+#button {
+width: 425px;
+padding: 10px;
+margin-top: 10px;
+font-size: 15px;
+font-weight:bold;
+outline:none;
+background: linear-gradient(to left top, #000, #4e2d69) fixed;
+border-radius: 10px;
+border: 5px solid rgba(255,255,255,0.2);
+color: rgba(255,255,255,0.8);
+transition: all 0.5s;
+}
+
+#button:hover {
+border: 5px solid rgba(255,255,255,0.5);
+background: linear-gradient(to left top, #000, #8b5db0) fixed;
+}
+
+#button:focus {
+background: linear-gradient(to left top, #8b5db0, #000) fixed;
+}
