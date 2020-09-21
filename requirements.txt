@@ -62,8 +62,11 @@ Jinja2==2.11.2
 jmespath==0.10.0
 joblib==0.16.0
 jsonschema==3.2.0
+jupyter==1.0.0
 jupyter-client==6.1.7
+jupyter-console==6.2.0
 jupyter-core==4.6.3
+jupyternotify==0.1.15
 jupytext==1.5.2
 kappa==0.6.0
 kiwisolver==1.2.0
@@ -131,6 +134,8 @@ pytz==2020.1
 PyWavelets==1.1.1
 PyYAML==5.3.1
 pyzmq==19.0.2
+qtconsole==4.7.7
+QtPy==1.9.0
 querystring-parser==1.2.4
 regex==2020.7.14
 requests==2.24.0
