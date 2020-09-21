@@ -12,8 +12,8 @@ Initial
 
 
 - add app to https://www.data.gv.at/
-- check lincense of https://ourworldindata.org/coronavirus-source-data and add to repo
-- make joblib model smaller
+- check license of https://ourworldindata.org/coronavirus-source-data and add to repo
+- make joblib model smaller https://stackoverflow.com/questions/43591621/trained-machine-learning-model-is-too-big
 -
 
 
@@ -32,5 +32,7 @@ code  .git/hooks/pre-commit
 #!/bin/sh
 # For every ipynb file in the git index, add a Python representation
 jupytext --from ipynb --to py:light --pre-commit
+
+chmod +x .git/hooks/pre-commit
 ```
 -

@@ -23,6 +23,9 @@ import numpy as np
 
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
+import jupyternotify
+ip = get_ipython()
+ip.register_magics(jupyternotify.JupyterNotifyMagics)
 # -
 
 # # Load data
