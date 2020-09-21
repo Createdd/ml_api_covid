@@ -19,6 +19,7 @@ import os
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import numpy as np
 
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
@@ -96,8 +97,6 @@ nominal = df.select_dtypes(include=['object']).copy()
 nominal_cols = nominal.columns.tolist()
 nominal_cols
 
-df.tests_units.value_counts(dropna=False)
-
 encoder = LabelEncoder()
 for col in nominal_cols:
     col
@@ -133,7 +132,7 @@ X_train
 # # Add ML
 
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score 
 from sklearn.model_selection import RandomizedSearchCV
 from joblib import dump, load
 
@@ -149,7 +148,7 @@ print(f'{r2_score(y_test, y_pred):.2%}')
 
 random_grid = {'n_estimators': [int(x) for x in np.linspace(start = 300, stop = 500, num = 50)],
                'max_features': ['auto', 'sqrt'],
-               'max_depth': [int(x) for x in np.linspace(10, 60, num = 10)],
+               'max_depth': [int(x) for x in np.linspace(10, 30, num = 10)],
                'min_samples_split': [2, 5],
                'min_samples_leaf': [2,4],
                'bootstrap': [True, False]}
@@ -177,7 +176,8 @@ rf_random.best_params_
 
 # # Save model
 
-dump(rf, 'rf_model.joblib') 
+# dump(rf, 'rf_model.joblib') 
+dump(rf, 'rf_model.joblib',compress=3)
 
 # # Predict on country
 
