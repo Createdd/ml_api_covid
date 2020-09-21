@@ -25,5 +25,12 @@ Register the new environment in ipython
 ipython kernel install --name ml_api_covid --user
 ```
 
-- pip install pycaret
+```sh
+touch .git/hooks/pre-commit
+code  .git/hooks/pre-commit
+
+#!/bin/sh
+# For every ipynb file in the git index, add a Python representation
+jupytext --from ipynb --to py:light --pre-commit
+```
 -
