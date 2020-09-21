@@ -41,9 +41,12 @@ chmod +x .git/hooks/pre-commit
 docker:
 
 ```sh
-docker build ml_api_covid:0.1 .
+docker build -t ml_api_covid .
 ```
 
 ```sh
-docker run --name deployML -p 8080:8080 ml_api_covid:0.1 .
+docker run -d -p 80:8080 ml_api_covid
 ```
+
+
+
