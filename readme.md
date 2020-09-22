@@ -58,17 +58,38 @@ zappa init
 zappa deploy dev
 ```
 
+## S3
+
+- https://console.aws.amazon.com/s3/
+
+
+1. "create bucket"
+2. give name and leave rest as default
+3. "create bucket"
+4.
+
 
 # Reading
+
+
+- https://towardsdatascience.com/how-to-deploy-a-machine-learning-model-on-aws-lambda-24c36dcaed20
+
 
 - https://www.bluematador.com/blog/serverless-in-aws-lambda-vs-fargate aws lambda vs fargate
 - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html billing alarm
 - https://towardsdatascience.com/deploy-machine-learning-pipeline-on-aws-fargate-eb6e1c50507
-
-
-
+- https://stackoverflow.com/questions/62941174/how-to-write-load-machine-learning-model-to-from-s3-bucket-through-joblib
+-
 
 zappa issue with pandas https://github.com/Miserlou/Zappa/issues/1927
 
+aws s3
+
+- https://stackabuse.com/file-management-with-aws-s3-python-and-flask/
+
 
 do not enter name for s3 bucket as it cannot be found
+
+# additional
+
+- https://www.freecodecamp.org/news/what-we-learned-by-serving-machine-learning-models-using-aws-lambda-c70b303404a1/

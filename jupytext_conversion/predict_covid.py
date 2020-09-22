@@ -152,7 +152,9 @@ print(f'{r2_score(y_test, y_pred):.2%}')
 
 # ## Improve hyperparameters
 #
-# Best 
+# Best params for n_estimators and max_depth are
+#
+# `{'n_estimators': 400, 'max_depth': 30}`
 
 random_grid = {'n_estimators': np.arange(200,600,100),
 #                'max_features': ['auto', 'sqrt'],
