@@ -66,7 +66,26 @@ zappa deploy dev
 1. "create bucket"
 2. give name and leave rest as default
 3. "create bucket"
-4.
+
+
+add policy for interacting with boto3
+
+```sh
+{
+      "Effect": "Allow",
+      "Action": [
+        "s3:CreateBucket",
+        "s3:ListBucket",
+        "s3:ListBucketMultipartUploads",
+        "s3:ListAllMyBuckets",
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::zappa-*",
+        "arn:aws:s3:::*"
+      ]
+    }
+```
 
 
 # Reading
