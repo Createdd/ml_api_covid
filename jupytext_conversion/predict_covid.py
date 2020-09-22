@@ -150,11 +150,11 @@ print(f'{r2_score(y_test, y_pred):.2%}')
 # ## Improve hyperparameters
 
 random_grid = {'n_estimators': np.arange(200,600,100),
-               'max_features': ['auto', 'sqrt'],
+#                'max_features': ['auto', 'sqrt'],
                'max_depth': np.arange(10,60,5),
                'min_samples_split': [2, 5],
-               'min_samples_leaf': [2,4],
-               'bootstrap': [True, False]}
+               'min_samples_leaf': [2,4]}#,
+#                'bootstrap': [True, False]}
 
 rf_random = RandomizedSearchCV(
     estimator = rf, 
