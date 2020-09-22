@@ -139,7 +139,10 @@ from sklearn.metrics import r2_score
 from sklearn.model_selection import RandomizedSearchCV
 from joblib import dump, load
 
-rf = RandomForestRegressor(n_estimators = 100, random_state = 0, max_depth=len(df_orig.columns))
+rf = RandomForestRegressor(
+    n_estimators = 100, # 400 
+    random_state = 0, 
+    max_depth=30)
 
 rf.fit(X_train, y_train)
 
@@ -148,12 +151,14 @@ y_pred = rf.predict(X_test)
 print(f'{r2_score(y_test, y_pred):.2%}')
 
 # ## Improve hyperparameters
+#
+# Best 
 
 random_grid = {'n_estimators': np.arange(200,600,100),
 #                'max_features': ['auto', 'sqrt'],
-               'max_depth': np.arange(10,60,5),
-               'min_samples_split': [2, 5],
-               'min_samples_leaf': [2,4]}#,
+               'max_depth': np.arange(10,40,10)}
+#                'min_samples_split': [2, 5],
+#                'min_samples_leaf': [2,4]}#,
 #                'bootstrap': [True, False]}
 
 rf_random = RandomizedSearchCV(
@@ -161,9 +166,12 @@ rf_random = RandomizedSearchCV(
     param_distributions = random_grid, 
     n_iter = 100, cv = 3, verbose=2, random_state=0)
 
-rf_random.fit(X_train, y_train)
+# +
+# rf_random.fit(X_train, y_train)
 
-rf_random.best_params_
+# +
+# rf_random.best_params_
+# -
 
 # ## Re-run 
 
@@ -181,6 +189,7 @@ rf_random.best_params_
 
 # dump(rf, 'rf_model.joblib') 
 dump(rf, 'rf_model.joblib',compress=3)
+# dump(rf, 'rf_model.pkl.z')
 
 # # Predict on country
 

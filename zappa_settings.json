@@ -1,0 +1,11 @@
+{
+    "dev": {
+        "app_function": "app.app",
+        "aws_region": "eu-central-1",
+        "profile_name": "default",
+        "project_name": "ml-api-covid",
+        "runtime": "python3.7",
+        "s3_bucket": "zappa-eyy4wkd2l",
+        "slim_handler": true
+    }
+}
