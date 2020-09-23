@@ -58,6 +58,20 @@ zappa init
 zappa deploy dev
 ```
 
+to deypoy
+
+```sh
+pip uninstall -r requirements.txt -y
+```
+
+```sh
+pip install Flask pandas boto3 sklearn zappa
+```
+
+```sh
+pip install -r requirements_prod.txt
+```
+
 ## S3
 
 - https://console.aws.amazon.com/s3/

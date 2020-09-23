@@ -7,12 +7,9 @@
         "runtime": "python3.7",
         "s3_bucket": "zappa-eyy4wkd2l",
         "slim_handler": true,
-        "regex_excludes": [
-            "seaborn", "numpy", "matplotlib", "*.ipynb"
-        ],
         "exclude": [
             "*.ipynb", "*.joblib", "jupytext_conversion/", ".ipynb_checkpoints/",
-            "predict_covid.ipynb"
+            "predict_covid.ipynb", "development", "models"
         ]
     }
 }
