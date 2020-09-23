@@ -98,7 +98,7 @@ add policy for interacting with boto3
 - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html billing alarm
 - https://towardsdatascience.com/deploy-machine-learning-pipeline-on-aws-fargate-eb6e1c50507
 - https://stackoverflow.com/questions/62941174/how-to-write-load-machine-learning-model-to-from-s3-bucket-through-joblib
--
+- https://ianwhitestone.work/zappa-zip-callbacks/ remove unnecessary files in zappa
 
 zappa issue with pandas https://github.com/Miserlou/Zappa/issues/1927
 
@@ -112,3 +112,4 @@ do not enter name for s3 bucket as it cannot be found
 # additional
 
 - https://www.freecodecamp.org/news/what-we-learned-by-serving-machine-learning-models-using-aws-lambda-c70b303404a1/
+- https://ianwhitestone.work/slides/serverless-meetup-feb-2020.html

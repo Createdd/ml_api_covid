@@ -1,50 +1,23 @@
 import boto3
-import os
-from joblib import load
-from boto.s3.key import Key
-from boto.s3.connection import S3Connection
-
-from botocore.client import Config
+from botocore.exceptions import NoCredentialsError
 
 
-# s3 = boto3.resource(
-#     's3',
-#     aws_access_key_id='XXXXXX',
-#     aws_secret_access_key='XXXXXXX',
-#     config=Config(signature_version='s3v4')
-# )
+def load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH):
+    s3 = boto3.client('s3')
 
-
-BUCKET_NAME = 'ml-api-covid-model'
-MODEL_FILE_NAME = 'rf_model.joblib'
-MODEL_LOCAL_PATH = f'{MODEL_FILE_NAME}_downloaded'
+    try:
+        s3.download_file(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
+        print("Download Successful")
+        return True
+    except FileNotFoundError:
+        print("The file was not found")
+        return False
+    except NoCredentialsError:
+        print("Credentials not available")
+        return False
 
 
 
-def load_model():
-    s3 = boto3.client(
-        's3',
-        # aws_access_key_id='XXXXX',
-        # aws_secret_access_key='XXXX',
-        # config=Config(signature_version='s3v4')
-    )
-
-    # for bucket in s3.buckets.all():
-    #     print(bucket.name)
-
-    # Download object at bucket-name with key-name to tmp.txt
-    s3.download_file(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
-    print('done')
-
-#   conn = S3Connection()
-#   bucket = conn.create_bucket(BUCKET_NAME)
-#   key_obj = Key(bucket)
-#   key_obj.key = MODEL_FILE_NAME
-
-#   contents = key_obj.get_contents_to_filename(MODEL_LOCAL_PATH)
-#   return load(MODEL_LOCAL_PATH)
-
-rf = load_model()
 
 
 
