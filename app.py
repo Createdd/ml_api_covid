@@ -1,5 +1,5 @@
 import pandas as pd
-from joblib import load
+
 from flask import Flask, request, render_template, jsonify
 from sklearn.preprocessing import LabelEncoder
 from download_model import load_model
@@ -68,8 +68,7 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     input_val = [x for x in request.form.values()][0]
-    load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
-    rf = load(MODEL_LOCAL_PATH)
+    rf = load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
 
     if input_val not in available_countries:
         return f'Country {input_val} is not in available list. Try one from the list! Go back in your browser', 400
@@ -82,8 +81,7 @@ def predict():
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
     input_val = request.form.get('location')
-    load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
-    rf = load(MODEL_LOCAL_PATH)
+    rf = load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
 
     if input_val not in available_countries:
         return f'Country {input_val} is not in available list. Try one from the list! Go back in your browser', 400
