@@ -68,8 +68,8 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    # input_val = [x for x in request.form.values()][0]
-    # rf = load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
+    input_val = [x for x in request.form.values()][0]
+    rf = load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
 
     # if input_val not in available_countries:
     #     return f'Country {input_val} is not in available list. Try one from the list! Go back in your browser', 400
