@@ -14,7 +14,7 @@ available_countries = [
 url_to_covid = 'https://covid.ourworldindata.org/data/owid-covid-data.csv'
 encoder = LabelEncoder()
 app = Flask(__name__)
-prediction=1
+
 
 
 def pre_process(df):
@@ -71,11 +71,11 @@ def predict():
     input_val = [x for x in request.form.values()][0]
     rf = load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
 
-    # if input_val not in available_countries:
-    #     return f'Country {input_val} is not in available list. Try one from the list! Go back in your browser', 400
+    if input_val not in available_countries:
+        return f'Country {input_val} is not in available list. Try one from the list! Go back in your browser', 400
 
-    # to_pred = get_prediction_params(input_val, url_to_covid)
-    # prediction = rf.predict(to_pred)[0]
+    to_pred = get_prediction_params(input_val, url_to_covid)
+    prediction = rf.predict(to_pred)[0]
 
     return render_template('home.html',pred=f'New cases will be {prediction}')
 
@@ -90,7 +90,7 @@ def predict_api():
     # to_pred = get_prediction_params(input_val, url_to_covid)
     # prediction = rf.predict(to_pred)[0]
 
-
+    prediction=1
     return jsonify(prediction)
 
 
