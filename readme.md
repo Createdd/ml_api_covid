@@ -8,9 +8,6 @@ Initial
 # Todos
 
 
-
-
-
 - add app to https://www.data.gv.at/
 - check license of https://ourworldindata.org/coronavirus-source-data and add to repo
 - make joblib model smaller https://stackoverflow.com/questions/43591621/trained-machine-learning-model-is-too-big
@@ -106,6 +103,7 @@ add policy for interacting with boto3
 
 
 - https://towardsdatascience.com/how-to-deploy-a-machine-learning-model-on-aws-lambda-24c36dcaed20
+- https://towardsdatascience.com/deploy-machine-learning-pipeline-on-aws-fargate-eb6e1c50507
 
 
 - https://www.bluematador.com/blog/serverless-in-aws-lambda-vs-fargate aws lambda vs fargate
@@ -127,3 +125,4 @@ do not enter name for s3 bucket as it cannot be found
 
 - https://www.freecodecamp.org/news/what-we-learned-by-serving-machine-learning-models-using-aws-lambda-c70b303404a1/
 - https://ianwhitestone.work/slides/serverless-meetup-feb-2020.html
+- https://read.iopipe.com/the-right-way-to-do-serverless-in-python-e99535574454
