@@ -16,7 +16,6 @@ encoder = LabelEncoder()
 app = Flask(__name__)
 
 
-
 def pre_process(df):
     cols_too_many_missing = ['new_tests',
                              'new_tests_per_thousand',
@@ -81,16 +80,15 @@ def predict():
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
-    # input_val = request.form.get('location')
-    # rf = load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
+    input_val = request.form.get('location')
+    rf = load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
 
-    # if input_val not in available_countries:
-    #     return f'Country {input_val} is not in available list. Try one from the list! Go back in your browser', 400
+    if input_val not in available_countries:
+        return f'Country {input_val} is not in available list. Try one from the list! Go back in your browser', 400
 
-    # to_pred = get_prediction_params(input_val, url_to_covid)
-    # prediction = rf.predict(to_pred)[0]
+    to_pred = get_prediction_params(input_val, url_to_covid)
+    prediction = rf.predict(to_pred)[0]
 
-    prediction=1
     return jsonify(prediction)
 
 
