@@ -1,4 +1,65 @@
-Initial
+<br />
+<p align="center">
+  <h3 align="center">Predict Covid per country</h3>
+
+  <p align="center">
+    Predict new cases of covid-19 infections
+    <br />
+    <a href="https://github.com/Createdd/Writing/blob/master/2020/articles/pythonApi.md"><strong>Explore the tutorial »</strong></a>
+    <br />
+    <br />
+  </p>
+</p>
+
+---
+
+![gif of app functionality](http://g.recordit.co/7JGIL7T9GC.gif)
+
+# About The Project
+
+This is the API Code for my tutorial article:
+
+- https://github.com/Createdd/Writing/blob/master/2020/articles/mlApiCovid.md
+
+
+It paints a picture for developing a machine learning Python API from start to finish and provides help in more difficult areas like the setup with AWS Lambda.
+
+You will find the end result on Rapidapi:
+
+- https://rapidapi.com/Createdd/api/covid_new_cases_prediction
+
+If you found this article helpful let me know and/or buy the functionality on Rapidapi to show support.
+
+
+
+## Data
+
+We will use the dataset from https://ourworldindata.org/coronavirus-source-data in csv format.s
+
+## Built With
+
+- Github (Code hosting),
+- Anaconda (Dependency and environment management),
+- Docker (for possible further usage in microservices)
+- Jupyter Notebook (code development and documentation),
+- Python (programming language),
+- AWS, especiall AWS Lambda and S3(for deployment),
+- Rapidapi (market to sell)
+
+
+# About the author
+
+Daniel is an entrepreneur, software developer and lawyer. His knowledge and interests currently revolve around programming machine learning applications and all its related aspects.
+
+**Connect on:**
+- [LinkedIn](https://www.linkedin.com/in/createdd)
+- [Github](https://github.com/Createdd)
+- [Medium](https://medium.com/@createdd)
+- [Twitter](https://twitter.com/_createdd)
+- [Instagram](https://www.instagram.com/create.dd/)
+
+---
+
 
 # Dataset
 
