@@ -18,11 +18,13 @@
 - [About The Project](#about-the-project)
   - [Data](#data)
   - [Built With](#built-with)
-  - [Getting started](#getting-started)
-    - [Getting started with development notebooks](#getting-started-with-development-notebooks)
+  - [See machine learning notebook](#see-machine-learning-notebook)
+- [Getting started](#getting-started)
+  - [Getting started with development notebooks](#getting-started-with-development-notebooks)
 - [About the author](#about-the-author)
 - [Remaining ideas:](#remaining-ideas)
 
+---
 
 # About The Project
 
@@ -45,6 +47,7 @@ We will use the dataset from https://ourworldindata.org/coronavirus-source-data 
 - License of data is [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 - Source code available on [Github](https://github.com/owid/covid-19-data/tree/master/public/data)
 
+
 ## Built With
 
 - Github (Code hosting),
@@ -55,8 +58,15 @@ We will use the dataset from https://ourworldindata.org/coronavirus-source-data 
 - AWS, especiall AWS Lambda and S3(for deployment),
 - Rapidapi (market to sell)
 
+## See machine learning notebook
 
-## Getting started
+covering rough data preparation, training, tuning and prediction.
+
+- https://github.com/Createdd/ml_api_covid/blob/master/development/predict_covid.ipynb
+
+---
+
+# Getting started
 
 ```sh
 git clone https://github.com/Createdd/ml_api_covid.git
@@ -70,7 +80,7 @@ docker build -t ml_api_covid .
 docker run -d -p 80:8080 ml_api_covid
 ```
 
-### Getting started with development notebooks
+## Getting started with development notebooks
 
 ```sh
 git clone https://github.com/Createdd/ml_api_covid.git
@@ -112,9 +122,3 @@ If this was helpful for you consider showing support:
   - [ ] uninstall unused deps
   - [ ] install prod deps
   - [ ] do zappa deploy dev
-
-
-
-
-
-
