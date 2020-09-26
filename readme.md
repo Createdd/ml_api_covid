@@ -21,7 +21,6 @@
   - [Getting started](#getting-started)
     - [Getting started with development notebooks](#getting-started-with-development-notebooks)
 - [About the author](#about-the-author)
-- [Todos](#todos)
 
 
 # About The Project
@@ -105,15 +104,7 @@ Daniel is an entrepreneur, software developer and lawyer. His knowledge and inte
 If this was helpful for you consider showing support:
 <a href="https://www.buymeacoffee.com/createdd" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
----
 
-
-
-# Todos
-
-
-- add app to https://www.data.gv.at/
-- check license of https://ourworldindata.org/coronavirus-source-data and add to repo
 
 
 
