@@ -89,8 +89,11 @@ def predict_api():
     to_pred = get_prediction_params(input_val, url_to_covid)
     prediction = rf.predict(to_pred)[0]
 
-    return jsonify(prediction)
+    result = {
+        "result": prediction
+    }
 
+    return jsonify(result)
 
 if __name__ == '__main__':
     app.run(debug=False)
