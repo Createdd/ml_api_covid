@@ -21,6 +21,7 @@
   - [Getting started](#getting-started)
     - [Getting started with development notebooks](#getting-started-with-development-notebooks)
 - [About the author](#about-the-author)
+- [Remaining ideas:](#remaining-ideas)
 
 
 # About The Project
@@ -35,9 +36,6 @@ It paints a picture for developing a machine learning Python API from start to f
 You will find the end result on Rapidapi:
 
 - https://rapidapi.com/Createdd/api/covid_new_cases_prediction
-
-If you found this article helpful let me know and/or buy the functionality on Rapidapi to show support.
-
 
 
 ## Data
@@ -103,6 +101,17 @@ Daniel is an entrepreneur, software developer and lawyer. His knowledge and inte
 
 If this was helpful for you consider showing support:
 <a href="https://www.buymeacoffee.com/createdd" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+
+---
+
+# Remaining ideas:
+
+- [ ] Create an upload script
+- [ ] Create a script for deployment. meaning to
+  - [ ] uninstall unused deps
+  - [ ] install prod deps
+  - [ ] do zappa deploy dev
 
 
 

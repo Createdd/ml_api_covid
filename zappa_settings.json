@@ -9,7 +9,7 @@
         "slim_handler": true,
         "exclude": [
             "*.ipynb", "*.joblib", "jupytext_conversion/", ".ipynb_checkpoints/",
-            "predict_covid.ipynb", "development", "models"
+            "predict_covid.ipynb", "development", "models", "ideas"
         ]
     }
 }
