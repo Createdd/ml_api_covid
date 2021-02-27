@@ -5,7 +5,7 @@
   <p align="center">
     Predict new cases of covid-19 infections
     <br />
-    <a href="https://github.com/Createdd/Writing/blob/master/2020/articles/pythonApi.md"><strong>Explore the tutorial »</strong></a>
+    <a href="https://github.com/Createdd/Writing/blob/master/2020/articles/mlApiCovid.md"><strong>Explore the tutorial »</strong></a>
     <br />
     <br />
   </p>
